@@ -1,0 +1,5 @@
+rich>=13.0
+anthropic>=0.30
+openai>=1.30
+requests>=2.31
+pytest>=7.0

@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "polyglot-ai"
+version = "0.1.0"
+description = "One terminal chat client for Claude, GPT, and local Ollama models."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Your Name" }]
+keywords = ["ai", "llm", "cli", "chatbot", "anthropic", "openai", "ollama"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Environment :: Console",
+    "Topic :: Communications :: Chat",
+]
+dependencies = [
+    "rich>=13.0",
+]
+
+[project.optional-dependencies]
+anthropic = ["anthropic>=0.30"]
+openai = ["openai>=1.30"]
+ollama = ["requests>=2.31"]
+all = ["anthropic>=0.30", "openai>=1.30", "requests>=2.31"]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+polyglot-ai = "polyglot_ai.main:main"
+
+[tool.setuptools.packages.find]
+include = ["polyglot_ai*"]
